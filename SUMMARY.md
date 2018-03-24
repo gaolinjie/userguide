@@ -1,4 +1,4 @@
-* <a href="http://tieba.baidu.com/f?kw=ubuntu">返回 Ubuntu 吧</a>
+* <a href="http://tieba.baidu.com/f?kw=ubuntu">返回百度贴吧 Ubuntu 吧</a>
 * Network
     * <a href="network/使用UbuntuServer建立一个属于自己的个人网站(A+P+M+W).md">使用 Ubuntu Server 建立一个属于自己的个人网站（A+P+M+W）</a>
 * Other

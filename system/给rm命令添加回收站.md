@@ -7,28 +7,36 @@
 
 将文件移动到“垃圾桶”是一个好主意，当你无意中运行 rm 命令时，可以拯救你；但是很少有人会说这是一个坏习惯，如果你不注意“垃圾桶”，它可能会在一定的时间内被文件和文件夹堆积起来。在这种情况下，我建议你按照你的意愿去做一个定时任务。
 
-这适用于服务器和桌面两种环境。 如果脚本检测到 GNOME 、KDE、Unity 或 LXDE 桌面环境（DE），则它将文件或文件夹安全地移动到默认垃圾箱 <code>$HOME/.local/share/Trash/files</code>，否则会在您的主目录中创建垃圾箱文件夹 <code>$HOME/Trash</code>。
+这适用于服务器和桌面两种环境。 如果脚本检测到 GNOME 、KDE、Unity 或 LXDE 桌面环境（DE），则它将文件或文件夹安全地移动到默认垃圾箱 `$HOME/.local/share/Trash/files`，否则会在您的主目录中创建垃圾箱文件夹 `$HOME/Trash`。
 
-saferm.sh 脚本托管在 Github 中，可以从仓库中克隆，也可以创建一个名为 saferm.sh 的文件并复制其上的代码。
+saferm.sh 脚本托管在 Github 中，可以从仓库中克隆，也可以创建一个名为 `saferm.sh` 的文件并复制其上的代码。
 
-<code>git clone https://github.com/lagerspetz/linux-stuff</code>
-<code>sudo mv linux-stuff/scripts/saferm.sh /bin</code>
-<code>rm -Rf linux-stuff</code>
+```
+git clone https://github.com/lagerspetz/linux-stuff
+sudo mv linux-stuff/scripts/saferm.sh /bin
+rm -Rf linux-stuff
+```
 
 在 .bashrc 文件中设置别名，
-<code>alias rm=saferm.sh</code>
+```
+alias rm=saferm.sh
+```
 
 执行下面的命令使其生效，
-<code>source ~/.bashrc</code>
-一切就绪，现在你可以执行 rm 命令，自动将文件移动到”垃圾桶”，而不是永久删除它们。
+```
+source ~/.bashrc
+```
+一切就绪，现在你可以执行 `rm` 命令，自动将文件移动到”垃圾桶”，而不是永久删除它们。
 
-测试一下，我们将删除一个名为 magi.txt 的文件，命令行明确的提醒了 Moving magi.txt to $HOME/.local/share/Trash/file。
-<code>rm -rf magi.txt</code>
-<code>Moving magi.txt to /home/magi/.local/share/Trash/files</code>
+测试一下，我们将删除一个名为 `magi.txt` 的文件，命令行明确的提醒了 Moving magi.txt to $HOME/.local/share/Trash/file。
+```
+rm -rf magi.txt
+Moving magi.txt to /home/magi/.local/share/Trash/files
 也可以通过 ls 命令或 trash-cli 进行验证。
-<code>ls -lh /home/magi/.local/share/Trash/files</code>
-<code>Permissions Size User Date Modified Name</code>
-<code>.rw-r--r-- 32 magi 11 Oct 16:24 magi.txt</code>    
+ls -lh /home/magi/.local/share/Trash/files
+Permissions Size User Date Modified Name
+.rw-r--r-- 32 magi 11 Oct 16:24 magi.txt
+```
 或者我们可以通过文件管理器界面中查看相同的内容。
 
 （LCTT 译注：原文此处混淆了部分 trash-cli 的内容，考虑到文章衔接和逻辑，此处略。）
